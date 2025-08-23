@@ -32,34 +32,9 @@ class _MainPageState extends State<MainPage> {
       label: '資訊',
     ),
     NavigationDestination(
-      icon: Icon(Icons.route_outlined),
-      selectedIcon: Icon(Icons.route),
-      label: '路線',
-    ),
-    NavigationDestination(
-      icon: Icon(Icons.directions_bus_outlined),
-      selectedIcon: Icon(Icons.directions_bus),
-      label: '車輛',
-    ),
-    NavigationDestination(
       icon: Icon(Icons.star_outline),
       selectedIcon: Icon(Icons.star),
       label: '收藏',
-    ),
-    NavigationDestination(
-      icon: Icon(Icons.person_outline),
-      selectedIcon: Icon(Icons.person),
-      label: '駕駛',
-    ),
-    NavigationDestination(
-      icon: Icon(Icons.business_outlined),
-      selectedIcon: Icon(Icons.business),
-      label: '監理',
-    ),
-    NavigationDestination(
-      icon: Icon(Icons.pin_drop_outlined),
-      selectedIcon: Icon(Icons.pin_drop),
-      label: '附近',
     ),
     NavigationDestination(
       icon: Icon(Icons.settings_outlined),
@@ -148,13 +123,8 @@ class _MainPageState extends State<MainPage> {
   Widget _buildPageContent(int index) {
     return switch (index) {
       0 => const InfoPage(),
-      1 => const RoutePage(),
-      2 => const CarsPage(),
-      3 => const FavoritesPage(),
-      4 => const DriverPlatesPage(),
-      5 => const CompanyPage(),
-      6 => const NearbyVehiclesPage(),
-      7 => const SettingsPage(),
+      1 => const FavoritesPage(),
+      2 => const SettingsPage(),
       _ => throw UnsupportedError('Invalid index: $index'),
     };
   }
@@ -162,13 +132,8 @@ class _MainPageState extends State<MainPage> {
   String _getAppBarTitle(int index) {
     return switch (index) {
       0 => "桃園公車站",
-      1 => "路線",
-      2 => "車輛",
-      3 => "收藏車輛",
-      4 => "駕駛反查",
-      5 => "監理資料",
-      6 => "附近車輛",
-      7 => "設定",
+      1 => "收藏車輛",
+      2 => "設定",
       _ => "桃園公車站"
     };
   }
